@@ -5,7 +5,8 @@
   "main": "scripts/upload_logs.js",
   "scripts": {
     "start": "node scripts/upload_logs.js",
-    "deploy": "node scripts/deploy.js"
+    "deploy": "node scripts/deploy.js",
+    "interact": "node scripts/interact.js"
   },
   "keywords": [
     "vyper",
