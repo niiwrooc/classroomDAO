@@ -10,6 +10,10 @@ const fs = require('fs');
 const path = require('path');
 const { ethers } = require('ethers');
 
+// Load environment variables from .env file
+require('dotenv').config();
+
+
 // Import 0G TS SDK gracefully
 let ZgSdk;
 try {
@@ -25,8 +29,8 @@ try {
 // ==========================================
 const CONFIG = {
     // 0G Chain and Storage RPCs (Testnet)
-    evmRpc: process.env.EVM_RPC || 'https://evmrpc-testnet.0g.ai',
-    indexerRpc: process.env.INDEXER_RPC || 'https://indexer-storage-testnet-turbo.0g.ai',
+    evmRpc: process.env.BLOCKCHAIN_RPC_URL || process.env.EVM_RPC || 'https://evmrpc-testnet.0g.ai',
+    indexerRpc: process.env.STORAGE_NODE_URL || process.env.INDEXER_RPC || 'https://indexer-storage-testnet-turbo.0g.ai',
     
     // Wallet Credentials (must have 0G tokens on testnet to pay gas and storage fees)
     privateKey: process.env.PRIVATE_KEY || '0x0000000000000000000000000000000000000000000000000000000000000000',

@@ -1,0 +1,24 @@
+{
+  "name": "classroomdao-v2",
+  "version": "2.0.0",
+  "description": "Smart contracts and log uploader for ClassroomDAO V2.0 using 0G Storage",
+  "main": "scripts/upload_logs.js",
+  "scripts": {
+    "start": "node scripts/upload_logs.js"
+  },
+  "keywords": [
+    "vyper",
+    "erc20",
+    "sbt",
+    "dao",
+    "0g",
+    "da"
+  ],
+  "author": "0G DA Engineer",
+  "license": "ISC",
+  "dependencies": {
+    "@0gfoundation/0g-storage-ts-sdk": "^1.2.10",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.1"
+  }
+}
