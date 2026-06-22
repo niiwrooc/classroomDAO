@@ -115,6 +115,10 @@ async function main() {
     console.log("  * 50% (100 SGC) сожжено навсегда (burn).");
     console.log("  * 50% (100 SGC) возвращено Преподавателю на награды.");
 
+    // ================= ДОБАВЛЯЕМ ПАУЗУ ТУТ =================
+    console.log("\nЖдем 5 секунд для синхронизации сети 0G...");
+    await new Promise((resolve) => setTimeout(resolve, 5000));
+    
     // 5. Распределение командного лута (50/50)
     console.log("\nШаг 5: Распределение командной награды (Loot 50/50)...");
     const lootAmount = ethers.parseUnits("300", 18); // 300 SGC всего
