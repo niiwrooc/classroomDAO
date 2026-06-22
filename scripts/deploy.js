@@ -23,11 +23,15 @@ function compileVyper(contractName) {
     console.log(`Компиляция ${contractName}.vy...`);
     try {
         const abiString = execSync(`vyper -f abi "${filePath}"`).toString().trim();
-        const bytecodeString = execSync(`vyper -f bytecode "${filePath}"`).toString().trim();
+        let bytecodeString = execSync(`vyper -f bytecode "${filePath}"`).toString().trim();
+        
+        if (!bytecodeString.startsWith('0x')) {
+            bytecodeString = '0x' + bytecodeString;
+        }
         
         return {
             abi: JSON.parse(abiString),
-            bytecode: '0x' + bytecodeString
+            bytecode: bytecodeString
         };
     } catch (error) {
         console.error(`\nОшибка компиляции ${contractName}.vy!`);
