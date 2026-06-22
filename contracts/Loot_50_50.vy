@@ -2,9 +2,9 @@
 
 # External Interfaces
 interface ISGC:
-    def transfer(to: address, amount: uint256) -> bool: external
-    def transferFrom(sender: address, receiver: address, amount: uint256) -> bool: external
-    def burn(amount: uint256) -> bool: external
+    def transfer(to: address, amount: uint256) -> bool: nonpayable
+    def transferFrom(sender: address, receiver: address, amount: uint256) -> bool: nonpayable
+    def burn(amount: uint256) -> bool: nonpayable
 
 interface IXP:
     def balanceOf(account: address) -> uint256: view
